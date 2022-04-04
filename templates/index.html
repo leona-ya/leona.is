@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ get_url(path='index.css', trailing_slash=false) | safe }}">
+{% endblock %}
+{% block body %}
+<header>
+    <h1>hi, i'm leona.</h1>
+</header>
+<main>
+    <div class="container" id="whoami">
+        <h2>about me</h2>
+        <ul>
+            <li>I'm a software developer and wannabe mathematician living near Cologne, Germany</li>
+            <li>My pronouns are they/them or she/her</li>
+        </ul>
+        <h2>projects</h2>
+        <p>This section may or may not be short, because it only contains projects I plan to work longer time on</p>
+        <h3>legitima</h3>
+        <p>
+            legitima is a still in development LDAP backend for my OIDC SSO built with ORY Hydra. <br>
+            <a href="https://cyberchaos.dev/leona/legitima">Project on GitLab</a>
+        </p>
+        <h2>social media & contact</h2>
+        <p>will be updated when I changed my username on the platforms.</p>
+        <ul>
+<!--            <li>Fediverse (soon)&lt;!&ndash;: @leona@fedi.leona.is &ndash;&gt;</li>-->
+<!--            <li>Twitter (soon)</li>-->
+            <li>GitLab (cyberchaos.dev): <a href="https://cyberchaos.dev/leona">@leona</a></li>
+<!--            <li>GitHub (soon)</li>-->
+<!--            <li>Matrix: @leona:leona.is</li>-->
+            <li>Email: hello@leona.is</li>
+            <li>Threema: <a href="https://threema.id/E2JZJUSE">E2JZJUSE</a></li>
+<!--            <li>Telegram: @leona</li>-->
+        </ul>
+        <p>
+            You can contact me by all ways mentioned above in English and German, just choose one that fits for you :3<br><br>
+            All of my public coding projects are on GitLab (cyberchaos.dev) and most of them, especially larger ones also on GitHub.
+        </p>
+    </div>
+</main>
+{% endblock %}

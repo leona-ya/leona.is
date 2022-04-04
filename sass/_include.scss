@@ -1,0 +1,34 @@
+$screen-tablet-min: 769px;
+$screen-desktop-min: 1024px;
+$screen-widescreen-min: 1216px;
+$screen-fullhd-min: 1408px;
+
+@mixin tablet {
+  @media (min-width: #{$screen-tablet-min}) {
+    @content;
+  }
+}
+
+// Medium devices
+@mixin desktop {
+  @media (min-width: #{$screen-desktop-min}) {
+    @content;
+  }
+}
+
+// Large devices
+@mixin wide {
+  @media (min-width: #{$screen-widescreen-min}) {
+    @content;
+  }
+}
+
+// Extra large devices
+@mixin fullhd {
+  @media (min-width: #{$screen-fullhd-min}) {
+    @content;
+  }
+}
+
+$color-light-pink: #F573A3;
+$color-dark-blue: #011627;
