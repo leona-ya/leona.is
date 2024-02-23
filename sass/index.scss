@@ -1,17 +1,21 @@
-header {
-  background: linear-gradient(90deg, #f573a3 0%, #cf326b 100%);
-  color: #000;
-  width: 100%;
-  min-height: 15vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+@import "_include.scss";
 h1 {
-  font-size: 5rem !important;
-  color: #000;
-  font-weight: 400;
-  text-align: center;
+  font-size: 2.1em;
+  &::after {
+    content: '';
+    display: block;
+    width: 12.5%;
+    height: 5px;
+    background-color: $color-light-pink;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
 }
 
+h2, h3 {
+  margin-block-end: 0.5em;
+}
+
+p {
+  margin: 0.5em 0;
+}

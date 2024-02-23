@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 
-{% block head %}
-<link rel="stylesheet" href="{{ get_url(path='section.css', trailing_slash=false) | safe }}">
-{% endblock %}
-
 {% block body %}
 <main class="container">
     <h1>{{ section.title }}</h1>
+    {{ section.content | markdown(inline=true) }}
     <ul>
         {% for post in section.pages %}
         <li>
-            <time>{{ post.date }}</time>
+            <time>{{ post.date }}</time> &nbsp;
             <a href="{{ post.permalink }}">{{ post.title }}</a>
+            &nbsp; <small class="tag-wrapper">{% for tag in post.taxonomies.tags %}<span class="tag">#{{ tag }}</span>{% endfor %}</small>
         </li>
         {% endfor %}
     </ul>

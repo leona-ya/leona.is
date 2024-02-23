@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+    <title>{% block title %}{% if page.title %}{{ page.title }} – {% endif %}{{ config.title }}{% endblock title %}</title>
     {% if config.generate_feed %}
     <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
     {% endif %}
     <link rel="stylesheet" href="{{ get_url(path='base.css', trailing_slash=false) | safe }}">
+    {% if config.mode == "Build" %}
+    <script defer data-domain="leona.is" src="https://lytics.leona.is/js/script.js"></script>
+    {% endif %}
     {% block head %}
     {% endblock head %}
 </head>
 <body>
 <nav>
-    <a href="{{ get_url(path='@/_index.md#whoami') }}">whoami</a>
-    <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
+    <div class="nav-content">
+        <a href="{{ get_url(path='@/_index.md') }}">about me</a>
+        <a href="{{ get_url(path='@/blog/_index.md') }}">blog</a>
+    </div>
 </nav>
 {% block body %} {% endblock %}
 </body>
