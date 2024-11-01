@@ -6,9 +6,10 @@
 
     <title>{% block title %}{% if page.title %}{{ page.title }} – {% endif %}{{ config.title }}{% endblock title %}</title>
     {% if config.generate_feed %}
-    <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+    <link rel="alternate" type="application/atom+xml" title="atom" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
     {% endif %}
     <link rel="stylesheet" href="{{ get_url(path='base.css', trailing_slash=false) | safe }}">
+    {{config.mode}}
     {% if config.mode == "Build" %}
     <script defer data-domain="leona.is" src="https://lytics.leona.is/js/script.js"></script>
     {% endif %}

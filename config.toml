@@ -12,8 +12,8 @@ taxonomies = [
 ]
 
 title = "leona on the web"
-
-generate_feed = true
+author = "Leona Maroni"
+generate_feeds = true
 
 [markdown]
 # Whether to do syntax highlighting
